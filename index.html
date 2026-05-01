@@ -81,49 +81,100 @@ nav.scrolled{height:60px;background:rgba(3,5,10,.97)}
 
 /* ══ ACHIEVEMENTS STRIP ══ */
 
-/* --- Base Styles (Desktop ke liye) --- */
+
+/* ══ ACHIEVEMENTS STRIP - FIXED HORIZONTAL ══ */
+
+.ach-strip {
+  background: var(--navy);
+  border-bottom: 1px solid var(--border2);
+  padding: 15px 1rem;
+  width: 100%;
+}
+
+.ach-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Grid use karke 4 equal columns force kiye hain */
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; 
+  gap: 1px;
+  background: var(--border2);
+}
+
+.ach-item {
+  background: var(--navy);
+  padding: 15px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .ach-num {
   font-family: var(--fh);
-  font-size: 22px; /* Desktop default */
+  /* Desktop size */
+  font-size: 22px; 
   font-weight: 800;
   background: linear-gradient(135deg, var(--teal), var(--blue2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1;
-  margin-bottom: 2px;
+  line-height: 1.1;
+  margin-bottom: 4px;
 }
 
-/* --- Mobile Specific Styles --- */
+.ach-label {
+  font-family: var(--fm);
+  font-size: 8px;
+  color: var(--grey);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.ach-sub {
+  font-size: 9px;
+  color: var(--teal);
+  margin-top: 2px;
+}
+
+/* ══ MOBILE FIXES (Phone ke liye) ══ */
 @media (max-width: 768px) {
-  .ach-strip {
-    padding: 8px 1rem; /* Container ki padding aur kam ki */
+  .ach-inner {
+    /* Mobile par bhi 4 columns hi rahenge, stack nahi honge */
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 
   .ach-item {
-    padding: 8px 4px; /* Boxes ke beech ki space kam ki */
+    padding: 10px 2px;
   }
 
   .ach-num {
-    font-size: 14px !important; /* Mobile par font size chota kar diya */
-    letter-spacing: -0.02em;
+    /* Mobile par number chota kar diya */
+    font-size: 14px !important; 
   }
 
   .ach-label {
-    font-size: 5px !important; /* Label ko aur chota kiya */
-    letter-spacing: 0.02em;
+    /* Mobile par label aur chota */
+    font-size: 5.5px !important;
+    line-height: 1;
   }
 
   .ach-sub {
-    font-size: 7px !important; /* Subtext ko bhi chota kiya */
-  }
-  
-  /* Salesforce jaise lambe text ko adjust karne ke liye */
-  .ach-item svg, .ach-item img {
-    max-width: 100%;
-    height: auto;
-    transform: scale(0.8); /* Items ko thoda shrink kiya */
+    font-size: 7px !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+  
   
 /* ══ HERO ══ */
 #hero{min-height:100vh;display:flex;align-items:center;padding:80px 3rem 60px;position:relative;overflow:hidden;
